@@ -62,7 +62,6 @@ pairs(m2006)
 
 # Classifying data
 m1992c <- im.classify(m1992, num_clusters=2)
-names(m1992c) <- c("Forest", "Human")
 f1992 <- freq(m1992c)
 p1992 <- f1992 * 100 / ncell(m1992c)
 
