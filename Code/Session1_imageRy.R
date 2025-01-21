@@ -62,6 +62,7 @@ pairs(m2006)
 
 # Classifying data
 m1992c <- im.classify(m1992, num_clusters=2)
+m1992cr <- subst(sunc, c(1,2), c("Firest","Human"))
 f1992 <- freq(m1992c)
 p1992 <- f1992 * 100 / ncell(m1992c)
 
@@ -82,6 +83,18 @@ geom_bar(stat="identity", fill="white") +
 ylim(c(0 ,100))
 
 p1 + p2 
+
+# Renaming classes after classification
+sun <- im.import("Solar_Orbiter_s_first_views_of_the_Sun_pillars.jpg")
+sunc <- im.classify(sun, num_clusters=3)
+sunce <- subst(sunc, c(1,2,3), c("High","Medium","Low"))
+
+par(mfrow=c(1,2))
+plot(sun)
+plot(sunce)
+
+freq(sunce)
+
 
 # importing data from outside R
 setwd("~/Downloads/")
