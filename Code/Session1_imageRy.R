@@ -106,5 +106,9 @@ plot(sunc)
 
 writeRaster(sunc, "suncropped.png")
 
+# PCA
+sentdol <- im.import("sentinel.dolomites")
+sentpc <- im.pca(sentdol)
+
 
 
